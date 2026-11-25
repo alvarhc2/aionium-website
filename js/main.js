@@ -15,6 +15,15 @@
     });
   }
 
+  var flower = document.querySelector(".hero-flower");
+  if (
+    flower &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    typeof flower.pauseAnimations === "function"
+  ) {
+    flower.pauseAnimations();
+  }
+
   var year = document.getElementById("year");
   if (year) {
     year.textContent = String(new Date().getFullYear());
